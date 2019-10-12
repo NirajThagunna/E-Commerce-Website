@@ -1,0 +1,323 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+body{
+	background: rgb(255,192,203);
+}
+
+header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0 100px;
+	background-color: #262626;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+header .logo img{
+	height: 60px;
+	line-height: 60px;
+	border-radius: 50%;
+	width: 60px;
+	float: left;
+}
+
+
+header nav{
+	float: right;
+}
+
+header nav ul{
+	margin:0;
+	padding: 0;
+	display: flex;
+}
+
+header nav ul li{
+	list-style: none;
+}
+
+header nav ul li a{
+	height: 60px;
+	line-height: 60px;
+	padding: 0 20px;
+	color: #fff;
+	font-size: 24px;
+	text-decoration: none;
+	display: block;
+	margin-top: -5px;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active{
+	color: #fff;
+	background-color: #2196f3;
+}
+
+.menu-toggle{
+	color: #fff;
+	float: right;
+	line-height: 60px;
+	font-size: 24px;
+	cursor: pointer;
+	display: none;
+}
+
+
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+
+  //CSS
+
+}
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+/*
+header{
+           	padding: 0 20px;
+           }
+
+           .menu-toggle{
+           	display: block;
+           }
+
+           header nav{
+           	position: absolute;
+           	width: 100%;
+           	height: calc(100vh - 50px);
+           	background-color: #333;
+           	top: 50px;
+           	left: -100%;
+           	transition: 0.5s;
+           }
+
+           header nav.active{
+           	left: 0;
+           }
+
+           header nav ul{
+           	display: block;
+           	text-align: center;
+           	background-image: linear-gradient(red, yellow, green);
+           }
+
+           header nav ul li{
+
+           }
+
+           header nav ul li  a{
+           	border-bottom: 1px solid rgba(0,0,0,0.2);
+           }
+*/
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+	//CSS
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /*header{
+           	padding: 0 20px;
+           }
+
+           .menu-toggle{
+           	display: block;
+           }
+
+           header nav{
+           	position: absolute;
+           	width: 100%;
+           	height: calc(100vh - 50px);
+           	background-color: #333;
+           	top: 50px;
+           	left: -100%;
+           	transition: 0.5s;
+           }
+
+           header nav.active{
+           	left: 0;
+           }
+
+           header nav ul{
+           	display: block;
+           	text-align: center;
+           	background-image: linear-gradient(red, yellow, green);
+           }
+
+           header nav ul li{
+
+           }
+
+           header nav ul li  a{
+           	border-bottom: 1px solid rgba(0,0,0,0.2);
+           }
+
+           */
+
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+       /*
+       header{
+           	padding: 0 20px;
+           }
+
+           .menu-toggle{
+           	display: block;
+           }
+
+           header nav{
+           	position: absolute;
+           	width: 100%;
+           	height: calc(100vh - 50px);
+           	background-color: #333;
+           	top: 50px;
+           	left: -100%;
+           	transition: 0.5s;
+           }
+
+           header nav.active{
+           	left: 0;
+           }
+
+           header nav ul{
+           	display: block;
+           	text-align: center;
+           	background-image: linear-gradient(red, yellow, green);
+           }
+
+           header nav ul li{
+
+           }
+
+           header nav ul li  a{
+           	border-bottom: 1px solid rgba(0,0,0,0.2);
+           }
+
+           */
+
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+      header{
+		padding: 0 20px;
+	}
+
+	.menu-toggle{
+		display: block;
+	}
+
+	header nav{
+		position: absolute;
+		width: 100%;
+		height: calc(70vh - 50px);
+		background-color: #333;
+		top: 60px;
+		left: -100%;
+		transition: 0.5s;
+
+		z-index: 1;
+		overflow-x: hidden;
+	}
+
+	header nav.active{
+             left: 0;
+	}
+
+	header nav ul{
+		display: block;
+		text-align: center;
+		background-image: linear-gradient(red, yellow, green, red);
+	}
+
+	header nav ul li a{
+		border-bottom: 1px solid rgba(0,0,0,.2);
+	}
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    header{
+		padding: 0 20px;
+	}
+
+	.menu-toggle{
+		display: block;
+	}
+
+	header nav{
+		position: absolute;
+		width: 100%;
+		height: calc(70vh - 50px);
+		background-color: #333;
+		top: 60px;
+		left: -100%;
+		transition: 0.5s;
+
+		z-index: 1;
+		overflow-x: hidden;
+	}
+
+	header nav.active{
+             left: 0;
+	}
+
+	header nav ul{
+		display: block;
+		text-align: center;
+		background-image: linear-gradient(red,yellow,red,green,blue,violet);
+	}
+
+	header nav ul li a{
+		border-bottom: 1px solid rgba(0,0,0,.2);
+	}
+
+}
+
+#alert{
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+@media (min-width: 767px) and (max-width: 1204px){
+       .slide_show{
+        position: relative;
+   margin-top: 86px;
+}
+}

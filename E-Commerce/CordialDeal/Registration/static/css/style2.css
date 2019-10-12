@@ -1,0 +1,160 @@
+body{
+	margin:0;
+	padding: 0;
+	font-family: Comic Sans MS;
+	width: 100%;
+
+}
+
+.product{
+	position: relative;
+	display: inline-block;
+	margin: 3% 2.7%;
+	width: 260px;
+	height: 340px;
+	background: #fff;
+	box-shadow: 0 10px 20px red;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.product .imgbox{
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.product .imgbox img{
+	display: block;
+	width: 100%;
+	height: 80%;
+	margin-top: 20px auto 0;
+}
+
+.details{
+	position: absolute;
+	width: 100%;
+	bottom: -166px;
+	background: #fff;
+	padding: 10px;
+	box-sizing: border-box;
+	box-shadow: 0 0 0 rgba(0,0,0,0);
+	transition: 0.5s;
+}
+
+.details h2{
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	width: 100%;
+}
+
+.product:hover .details{
+	bottom: 0;
+	box-shadow: 0 -5px 15px rgba(0,0,0,.25);
+}
+
+.details h2 span{
+	font-size: 14px;
+	color: red;
+	font-weight:600;
+}
+
+.details .price{
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	font-weight: bold;
+	color: #ff4faf;
+	font-size: 20px;
+}
+
+label{
+	display: block;
+	margin-top: 5px;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+ul{
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+ul li{
+	list-style: none;
+	margin: 5px 5px 0;
+	font-size: 12px;
+	font-weight: bold;
+	color: green;
+}
+
+ul li:first-child{
+    margin-left: 0;
+}
+
+ul.Colors li{
+	width: 16px;
+	height: 16px;
+}
+
+ul.Colors li:nth-child(1){
+	background: #ff0;
+}
+
+ul.Colors li:nth-child(2){
+	background: #f00;
+}
+
+ul.Colors li:nth-child(3){
+	background: #f0f;
+}
+
+ul.Colors li:nth-child(4){
+	background: #0ff;
+}
+
+ul.Colors li:nth-child(5){
+	background: #00f;
+}
+
+.add1{
+	display: block;
+	padding: 7px;
+	color: black;
+	margin: 15px 0 0;
+	background: rgba(0,255,0);
+	text-decoration: none;
+	transition: .3s;
+	cursor: progress;
+	width: 55%;
+	margin-left: -10px;
+}
+
+.add2{
+	display: inline-block;
+	padding: 7px;
+	color: #fff;
+	margin: 15px 0 0;
+	background: rgb(255,69,0);
+	text-align: center;
+	text-decoration: none;
+	transition: .3s;
+	cursor: pointer;
+	width: 50%;
+	float: right;
+	margin-top: -36px;
+	margin-left: 122.5px;
+	position:absolute;
+}
+
+
+.add1:hover{
+	color: #fff;
+	background: rgba(255,0,0);
+}
+
+.add2:hover{
+	color: black;
+	background: rgba(0,0,255);
+}

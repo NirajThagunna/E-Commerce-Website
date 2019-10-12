@@ -1,0 +1,218 @@
+ .searchContainer {
+  display: grid;
+  grid-template-columns:1.5rem 4fr 1fr;
+  width:400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  float:left;
+  margin-top: 7px;
+  margin-left:60px;
+}
+
+.searchContainer:focus-within i {
+  display: none;
+}
+
+.searchContainer:focus-within .searchBox{
+  grid-column:1/4;
+}
+
+.searchContainer:focus-within .searchBox::placeholder {
+  color:transparent;
+}
+
+.searchIcon {
+  background-color:white;
+  color:black;
+  font-size: 18px;
+  padding: 0.8rem;
+  grid-row:1;
+  grid-column:1/2;
+  z-index:2
+}
+
+.searchBox {
+  border: 0;
+  padding: 0.5rem;
+  grid-column:2/4;
+  grid-row:1;
+  outline:none;
+}
+
+.searchButton {
+  background: #538AC5;
+  border: 0;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0;
+  grid-column:4/5;
+  grid-row:1;
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+              .searchContainer {
+  display: grid;
+  grid-template-columns:1.5rem 4fr 1fr;
+  width:300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  float:left;
+  margin-top: 7px;
+  margin-left:5px;
+}
+
+header nav{
+   z-index: 1;
+   overflow-x: hidden;
+}
+
+}
+
+@media (min-width: 320px) and (max-width: 427px) {
+                    .searchContainer {
+  display: grid;
+  grid-template-columns:1.5rem 4fr 1fr;
+  width:250px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  float:left;
+  margin-top: 7px;
+  margin-left:10px;
+}
+
+header nav{
+		position: absolute;
+		width: 100%;
+		height: calc(100vh - 50px);
+		background-color: #333;
+		top: 60px;
+		left: -100%;
+		transition: 0.5s;
+
+		z-index: 1;
+		overflow-x: hidden;
+	}
+
+}
+
+@media (min-width: 320px) and (max-width: 399px) {
+                          .searchContainer {
+  display: grid;
+  grid-template-columns:1.5rem 4fr 1fr;
+  width:180px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  float:left;
+  margin-top: 7px;
+  margin-left:10px;
+}
+
+header nav{
+   z-index: 1;
+   overflow-x: hidden;
+}
+}
+
+@media (min-width: 400px) and (max-width: 439px){
+     .searchContainer {
+  display: grid;
+  grid-template-columns:1.5rem 4fr 1fr;
+  width:200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  float:left;
+  margin-top: 7px;
+  margin-left:60px;
+}
+
+header nav{
+   z-index: 1;
+   overflow-x: hidden;
+}
+}
+
+@media (min-width: 440px) and (max-width: 582px){
+ .searchContainer {
+  display: grid;
+  grid-template-columns:1.5rem 4fr 1fr;
+  width:250px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  float:left;
+  margin-top: 7px;
+  margin-left:60px;
+}
+
+header nav{
+   z-index: 1;
+   overflow-x: hidden;
+}
+}
+
+@media (min-width: 583px) and (max-width: 767px){
+                               .searchContainer {
+  display: grid;
+  grid-template-columns:1.5rem 4fr 1fr;
+  width:400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  float:left;
+  margin-top: 7px;
+  margin-left:60px;
+}
+
+header nav{
+   z-index: 1;
+   overflow-x: hidden;
+}
+}
+
+@media (min-width: 768px) and (max-width: 940px){
+                                          .searchContainer {
+  display: grid;
+  grid-template-columns:1.5rem 4fr 1fr;
+  width:430px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  float:left;
+  margin-top: 7px;
+  margin-left:75px;
+}
+
+header nav{
+   z-index: 1;
+   overflow-x: hidden;
+}
+}
+
+@media (min-width: 941px) and (max-width: 1204px){
+                                     .searchContainer {
+  display: grid;
+  grid-template-columns:1.5rem 4fr 1fr;
+  width:500px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  float:left;
+  margin-top: 7px;
+  margin-left:180px;
+}
+
+header nav{
+   z-index: 1;
+   overflow-x: hidden;
+}
+}
