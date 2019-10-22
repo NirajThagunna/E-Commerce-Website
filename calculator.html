@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        calculator
+    </title>
+      <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Wendy+One" rel="stylesheet"> 
+<script type="text/javascript" src="script.js"  src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+
+
+
+<style type="text/css">
+    *{
+    padding:0;
+    margin:5px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    outline:none;
+    
+    user-select:none ;
+
+}
+body{
+    background-color:#333;
+    
+    
+}
+
+.night{
+    background-color:blue;
+}
+button{
+    width: 50px;
+    height: 45px;
+    border:0;
+    background-color: #e0e0e0;
+    
+    color: #333;
+    font-size: 28px;
+    border-radius: 3px;
+    cursor: pointer;
+    
+outline:none;
+}
+
+button:hover{
+    background-color: #3f51b5;
+    color: #fff;
+    
+}
+
+
+
+
+.calculator{
+    
+    font-size: 30px;
+    width: 278px;
+    height: 410px;
+    background-color:#fff;
+    border-radius: 10px;
+    position:absolute;
+
+left:50%;
+    top:50%;
+       transform:translate(-50%,-50%);
+    z-index:0;
+}
+
+
+.viewer{
+    outline-style:none;
+    height: 60px;
+    background-color: #fff;
+    margin-top:15px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    text-align: right;
+    padding-right: 3px;
+    border-bottom: 1px silver solid;
+    border-width: 1.5px;
+    line-height: -.1em;
+    padding-bottom: 5px;
+}
+
+
+.oprator:hover{
+    background-color: #ee6e73;
+}
+
+
+.equal:hover{
+    background-color:#00c853;
+}
+
+
+.splash{
+    width:100hw;
+    height:100vh;
+    background: linear-gradient(180deg, #1CB5E0 0%, #000851 100%);
+    color:gold;
+    z-index:2;
+    position:relative;
+    top:0%;
+    left:0%;
+    color:#fafafa;
+    letter-spacing:.04em;
+    margin:-10px;
+    animation-duration:1s;
+    animation-name:dis;
+    animation-delay:3s;
+    display:;
+}
+
+
+.lodding{
+    position:absolute;
+    top:52%;
+    left:15%;
+    width:70%;
+    height:6px;
+    border-radius:5px;
+    background-color:#ddd;
+    
+}
+
+.lodding .value{
+    width:100%;
+    margin:0px;
+    border-radius:5px;
+     background-color:gold;
+    height:100%;
+    animation-duration:3s;
+    animation-name:lodding;
+}
+
+
+@keyframes lodding {
+    0% {width: 0%; }
+    10% {width:10% }
+    25% {width:25%;}
+    50%{width:50%;} 
+    75% {width:75%;}
+    89%{width:89%;}
+    96%{width:96%;}
+    98%{width:100%;}
+
+    }
+    
+  @keyframes dis{
+     0%{opacity:1;}
+     10%{opacity:.9;}
+     20%{opacity:.8;}
+     30%{opacity:.7;}
+     40%{opacity:.6;}
+     50%{opacity:.5;}
+     60%{opacity:.4;}
+     70%{opacity:.3;}
+     80%{opacity:.2;}
+     90%{opacity:.1;}
+     100%{opacity:.0;}
+     
+     
+     
+} 
+
+.splash h1{
+    position:absolute;
+    top:40%;
+    left:20%;
+    color:#fff;
+    font-size:48px;
+    font-style:bold;
+    
+}
+
+
+.settingContainer{
+    width:45%;
+    height:50%;
+    background-color:#fafafa;
+    color:#333;
+    border-radius:5px;
+    z-index:1;
+    position:absolute;
+    top:1%;
+    left:50%;
+    display:inline-block;
+    padding:5px;
+    box-shadow:-2px 2px 5px #ddd;
+    visibility:hidden;
+}
+
+
+.settingContainer input{
+    display:none;
+}
+
+.settingContainer span{
+    display:inline;
+    
+}
+
+
+.settingContainer .radioContainer{
+    width:32px;
+    height:11px;
+    border-radius:10px;
+    background-color:#ddd;
+    display:inline-block;
+    border:.5px solid #999;
+    position:relative;
+    left:0%;
+    top:3px;
+}
+
+.radioContainer::after{
+    content:'';
+    position:absolute;
+    width:17px;
+    height:17px;
+    border-radius:50%;
+    background-color:#777;
+    display:inline;
+    top:-3px;
+    left:0%;
+ 
+}
+    
+.settingContainer input:checked + .radioContainer:after{
+    left:50%;
+    background-color:royalblue;
+}
+
+   
+.settingContainer input:checked + .radioContainer{
+   border-color:royalblue;
+  }
+  
+.title{
+    float:left;
+}
+
+.setting{
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    position:absolute;
+    top:1%;
+    z-index:1;
+    left:91%;
+    text-align:center;
+    font-size:14px;
+    
+}
+
+</style>
+
+
+
+<script type="text/javascript">
+    alert("Hey, Guys I am Niraj Thagunna.This is my first project and if you like my project please follow me in GitHub.\n")
+
+
+
+var allowDot = true;
+
+function lastIsOperator() {
+    if (screen.value[screen.value.length - 1] == '+' |
+        screen.value[screen.value.length - 1] == '-' |
+        screen.value[screen.value.length - 1] == '*' |
+        screen.value[screen.value.length - 1] == '/' |
+        screen.value[screen.value.length - 1] == '.') {
+            return true;
+        } else {
+            return false;
+        }
+        
+}
+
+
+function getNumber(num) {
+
+    switch (num) {
+        case 1:
+            screen.value += '1';
+            break;
+        case 2:
+            screen.value += '2';
+            break;
+        case 3:
+            screen.value += '3';
+            break;
+        case 4:
+            screen.value += '4';
+            break;
+        case 5:
+            screen.value += '5';
+            break;
+        case 6:
+            screen.value += '6';
+            break;
+        case 7:
+            screen.value += '7';
+            break;
+        case 8:
+            screen.value += '8';
+            break;
+        case 9:
+            screen.value += '9';
+            break;
+
+        case 0:
+            screen.value += '0';
+            break;
+
+        case 'dot':
+            if (allowDot & !lastIsOperator()) {
+                    
+                if (screen.value == '') {
+                    screen.value += '0.';
+                } else {
+                    screen.value += '.';
+                }
+                
+                allowDot = false;
+                break;
+            }
+    }
+
+};
+
+
+function getOparator(opt) {
+
+    if (!lastIsOperator()) {
+
+        if (screen.value != '') {
+
+            switch (opt) {
+                case 'plus':
+                    screen.value += '+';
+                    break;
+                case 'minus':
+                    screen.value += '-';
+                    break;
+                case 'multiply':
+                    screen.value += '*';
+                    break;
+                case 'division':
+                    screen.value += '/';
+                    break;
+            }
+        }
+        
+        allowDot = true;
+        
+        switch (opt) {
+            case 'plusminus':
+                screen.value += '-';
+                break;
+        }
+
+    }
+};
+
+function calculate() {
+
+    if (screen.value != '') {
+        result = eval(screen.value);
+
+        result = parseFloat(result);
+        screen.value = result;
+
+    } else {
+        result = '0';
+    }
+    
+    allowDot = false;
+
+}
+
+
+function clearAll() {
+    screen.placeholder = '0';
+    
+    screen.value = '';
+    allowDot = true;
+
+};
+
+function onOff() {
+    screen.placeholder = '';
+
+    var text = "";
+    screen.value = text;
+    allowDot = true;
+};
+
+function deleteLastNum() {
+    var x = screen.value;
+    if (x.length > 0) {
+        x = x.substring(0, x.length - 1);
+        screen.value = x;
+    }
+
+};
+var i = 0;
+
+function setBracket() {
+    if (i == 0) {
+        screen.value += '(';
+        i = 1;
+    } else if (i == 1) {
+        screen.value += ')';
+        i = 0;
+
+    }
+    
+}
+
+document.getElementById("setting").addEventListener("click",changeTheame);
+
+const body = document.querySelector("body");
+function changeTheame(){
+
+    body.toggleClass("night");
+    alert("w")
+}
+
+
+
+
+</script>
+
+</head>
+
+<body id='body'>
+
+   <button class='setting' id="setting">•••</button>
+   
+ <div class='settingContainer' id="setting"><button  style='float:right; font-size:14px; width:20px; height:20px; border-radius:50%; text-align:center;' onclick='closeSetting()'>X</button><h2>Settings</h2><br />
+  <div><label><span class='title'>Night Mode</span><input type='checkbox' id='check' name='theme'></input><span class='radioContainer'></span></label></div></div>
+  
+     <div id='splash' class='splash'><h1>Calculator</h1> <div class='lodding'><div class='value'></div></div> </div>
+               
+    <div class="calculator">
+
+        <input type="text"  class="viewer" id="screen" placeholder="0" disabled style="border:none;   border-radius:5px; font-size: 40px; width:260px; background-color: #ccff90;
+ "></input><br>
+ 
+
+        <button class="option" onclick="onOff()" style="font-size: 16px; width: 60px; height: 26px; background-color: #d32f2f; color: #fff; border-radius: 8px; "  onclick="off()" >Off</button> 
+
+        <button class="option" onclick="clearAll()" style="font-size: 16px; width: 60px; height: 26px;  background-color:#00c853; color: #fff; border-radius: 8px; " >Clear</button>
+
+        <button class="option" onclick="deleteLastNum()" style="font-size: 16px; width: 60px; height: 26px; font-style:bold; background-color:#fdd835; color: #fff; border-radius: 8px; margin-right: 20px;" >&#8592;</button> 
+
+
+        <button value="7"  onclick="getNumber(7)">7</button>
+        <button value="8" onclick="getNumber(8)">8</button>
+        <button value="9" onclick="getNumber(9)">9</button>
+        <button value="plus" class="oprator" onclick="getOparator('plus')">+</button><br>
+
+        <button value="4" onclick="getNumber(4)">4</button>
+
+        <button value="5" onclick="getNumber(5)">5</button>
+        <button value="6" onclick="getNumber(6)">6</button>
+        <button value="minus" class="oprator" onclick="getOparator('minus')">&#x2212;</button><br>
+
+        <button value="1" onclick="getNumber(1)">1</button>
+        <button value="2" onclick="getNumber(2)">2</button>
+        <button value="3" onclick="getNumber(3)">3</button>
+        <button value="multiply" class="oprator" onclick="getOparator('multiply')"> &#x00D7;</button>
+        <button value="dot" onclick="getNumber('dot')">.</button>
+        <button value="0" onclick="getNumber(0)">0</button>
+        <button value="plusminus" onclick="getOparator('plusminus')">&#x00B1;</button>
+        <button value="division" class="oprator" onclick="getOparator('division')">&#247;</button>
+
+
+        <button class="equal" style="width: 67%" onclick="calculate()">=</button>
+        <button class="oprator" onclick="setBracket()">&#40; &#41;</button><br>
+
+        
+    
+        <h6 style="color: red; position: absolute; left:42%; letter-spacing:0em;
+        
+        top:95%; font-size:11px; background:transparent">Made By <span style='color:pink; background:none'>&#10084;</span>Niraj Thagunna</h6>
+
+</div>
+
+<script>var screen = document.getElementById("screen");
+
+function splash() {
+    var splashContainer = document.getElementById('splash');
+    splashContainer.style.display = 'none';
+}
+setTimeout(splash,4000);
+
+
+var check =document.getElementById("check");
+if(check.checked){
+    console.log("chek");
+}
+
+</script>
+</body>
+</html>
